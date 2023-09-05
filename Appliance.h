@@ -2,16 +2,19 @@
 #define APPLIANCE_H
 
 class Appliance {
+protected:
+    int powerRating;
+    bool isOn;
+
 public:
     Appliance();
     Appliance(int powerRating);
-    bool isOn;
+    bool getIsOn() const;
     void turnOn();
     void turnOff();
-    double getPowerConsumption() const;
-
-private:
-    int powerRating;
+    int getPowerRating() const;
+    void setPowerRating(int powerRating);
+    virtual double getPowerConsumption();
 };
 
 #endif

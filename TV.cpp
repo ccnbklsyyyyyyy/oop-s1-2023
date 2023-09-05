@@ -1,17 +1,17 @@
 #include "TV.h"
 
-TV::TV() : screenInches(0.0) {}
+TV::TV() : Appliance(), screenInches(0.0) {}
 
 TV::TV(int powerRating, double screenSize) : Appliance(powerRating), screenInches(screenSize) {}
 
-void TV::setScreenSize(double screenSize) {
-    screenInches = screenSize;
+double TV::getPowerConsumption() {
+    return getPowerRating() * (screenInches / 10);
 }
 
 double TV::getScreenSize() const {
     return screenInches;
 }
 
-double TV::getPowerConsumption() const {
-    return powerRating * (screenInches / 10);
+void TV::setScreenSize(double screenSize) {
+    screenInches = screenSize;
 }
