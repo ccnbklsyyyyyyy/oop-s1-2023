@@ -10,8 +10,6 @@ public:
     AirFleet();
     ~AirFleet(); // Destructor to clean up memory
     AirVehicle** get_fleet() const;
-
-private:
     AirVehicle** fleet;
 };
 

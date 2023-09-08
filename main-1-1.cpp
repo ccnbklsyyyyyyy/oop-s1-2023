@@ -11,8 +11,5 @@ int main() {
     int weight1 = vehicle1.get_weight();
     float fuel2 = vehicle2.get_fuel();
     int flights1 = vehicle1.get_numberOfFlights();
-
-    // Output and test results
-    // Ensure that the output matches your expectations
     return 0;
 }

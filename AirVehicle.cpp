@@ -10,8 +10,7 @@ void AirVehicle::refuel() {
 
 void AirVehicle::fly(int headwind, int minutes) {
     numberOfFlights++;
-    // Calculate fuel consumption based on headwind, weight, and time
-    // Update fuel and other attributes accordingly
+
 }
 
 int AirVehicle::get_weight() const {

@@ -11,7 +11,5 @@ int main() {
     int flights = plane.get_numberOfFlights();
     float fuel = plane.get_fuel();
 
-    // Output and test results
-    // Ensure that the output matches your expectations
     return 0;
 }
