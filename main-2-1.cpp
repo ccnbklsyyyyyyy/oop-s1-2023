@@ -1,21 +1,8 @@
-#include "Fridge.h"
-#include <iostream>
+#include "Helicopter.h"
 
 int main() {
-    Fridge fridge1;
-    Fridge fridge2(200, 300);
-
-    fridge1.turnOn();
-    fridge1.setVolume(150);
-    std::cout << "Fridge 1 is on: " << fridge1.isOn << std::endl;
-    std::cout << "Fridge 1 volume: " << fridge1.getVolume() << " liters" << std::endl;
-    std::cout << "Fridge 1 power consumption: " << fridge1.getPowerConsumption() << " watts" << std::endl;
-
-    fridge2.turnOff();
-    fridge2.setVolume(250);
-    std::cout << "Fridge 2 is on: " << fridge2.isOn << std::endl;
-    std::cout << "Fridge 2 volume: " << fridge2.getVolume() << " liters" << std::endl;
-    std::cout << "Fridge 2 power consumption: " << fridge2.getPowerConsumption() << " watts" << std::endl;
-
+    Helicopter helicopter(8000, "Apache");  // Create a Helicopter
+    helicopter.fly(40, 60);  // Test the fly method
+    helicopter.refuel();  // Test the refuel method
     return 0;
 }
