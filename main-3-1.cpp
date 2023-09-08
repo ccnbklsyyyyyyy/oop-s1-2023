@@ -1,13 +1,15 @@
 #include "AirFleet.h"
 
 int main() {
-    AirFleet airFleet;  // Create an AirFleet
-    AirVehicle** fleet = airFleet.get_fleet();
-    
-    // Access and test the vehicles in the fleet
-    for (int i = 0; i < 5; i++) {
-        fleet[i]->fly(30, 45);  // Test the fly method for each vehicle
-    }
-    
+    // Test the AirFleet class
+    AirFleet fleet;
+
+    AirVehicle** vehicles = fleet.get_fleet();
+
+    // Access and test individual vehicles in the fleet
+    // Remember to delete allocated memory for each vehicle when done
+
+    // Output and test results
+    // Ensure that the output matches your expectations
     return 0;
 }

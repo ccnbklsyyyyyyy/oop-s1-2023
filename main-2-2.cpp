@@ -1,8 +1,17 @@
 #include "Airplane.h"
 
 int main() {
-    Airplane airplane(10000, 150);  // Create an Airplane with weight 10000 and 150 passengers
-    airplane.fly(65, 120);  // Test the fly method
-    airplane.refuel();  // Test the refuel method
+    // Test the Airplane class
+    Airplane plane(10000, 50);
+
+    plane.refuel();
+    plane.fly(60, 120);
+
+    int passengers = plane.get_numPassengers();
+    int flights = plane.get_numberOfFlights();
+    float fuel = plane.get_fuel();
+
+    // Output and test results
+    // Ensure that the output matches your expectations
     return 0;
 }

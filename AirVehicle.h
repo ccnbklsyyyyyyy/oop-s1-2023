@@ -5,11 +5,12 @@ class AirVehicle {
 public:
     AirVehicle();
     AirVehicle(int w);
-    int get_weight();
-    float get_fuel();
-    int get_numberOfFlights();
     void refuel();
     virtual void fly(int headwind, int minutes);
+    int get_weight() const;
+    float get_fuel() const;
+    int get_numberOfFlights() const;
+    void set_weight(int w);
 
 private:
     int weight;
@@ -17,4 +18,4 @@ private:
     int numberOfFlights;
 };
 
-#endif
+#endif // AIRVEHICLE_H

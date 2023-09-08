@@ -8,10 +8,11 @@
 class AirFleet {
 public:
     AirFleet();
-    AirVehicle** get_fleet();
+    ~AirFleet(); // Destructor to clean up memory
+    AirVehicle** get_fleet() const;
 
 private:
-    AirVehicle* fleet[5];
+    AirVehicle** fleet;
 };
 
-#endif
+#endif // AIRFLEET_H

@@ -1,8 +1,17 @@
 #include "Helicopter.h"
 
 int main() {
-    Helicopter helicopter(8000, "Apache");  // Create a Helicopter
-    helicopter.fly(40, 60);  // Test the fly method
-    helicopter.refuel();  // Test the refuel method
+    // Test the Helicopter class
+    Helicopter helicopter(5000, "RedHawk");
+
+    helicopter.refuel();
+    helicopter.fly(40, 45);
+
+    std::string name = helicopter.get_name();
+    int flights = helicopter.get_numberOfFlights();
+    float fuel = helicopter.get_fuel();
+
+    // Output and test results
+    // Ensure that the output matches your expectations
     return 0;
 }
