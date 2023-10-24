@@ -9,4 +9,4 @@ public:
     void move(int dx, int dy);
 };
 
-#endif // SHIP_H
+#endif

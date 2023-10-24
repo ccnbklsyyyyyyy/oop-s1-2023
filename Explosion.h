@@ -10,4 +10,4 @@ public:
     void apply(GameEntity& entity) override;
 };
 
-#endif // EXPLOSION_H
+#endif

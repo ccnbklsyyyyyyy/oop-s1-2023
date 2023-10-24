@@ -14,4 +14,4 @@ private:
     char type;
 };
 
-#endif // GAMEENTITY_H
+#endif
