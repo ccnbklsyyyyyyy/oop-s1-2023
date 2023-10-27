@@ -2,9 +2,10 @@
 #include "Play.h"
 
 int main() {
-    Play game;
-    game.initPlay(2, 1, 5, 5);
-    game.playCycle(10, 2.5);
-
+    Play play;
+    play.initPlay(5, 3, 10, 10);
+    play.playCycle(100, 2.0);
+    
     return 0;
 }
+

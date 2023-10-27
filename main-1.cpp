@@ -4,18 +4,23 @@
 #include "Assists.h"
 
 int main() {
-    Spot spot(1, 2, 'A');
+    Spot spot(0, 0, 'A');
+    
     std::tuple<int, int> loc = spot.getLoc();
+    std::cout << "Location: (" << std::get<0>(loc) << ", " << std::get<1>(loc) << ")" << std::endl;
+    
     char category = spot.getCategory();
-
-    std::cout << "Spot Location: (" << std::get<0>(loc) << ", " << std::get<1>(loc) << ")" << std::endl;
-    std::cout << "Spot Category: " << category << std::endl;
-
-    std::tuple<int, int> randomLoc = Assists::createRandomLoc(5, 5);
-    std::cout << "Random Location: (" << std::get<0>(randomLoc) << ", " << std::get<1>(randomLoc) << ")" << std::endl;
-
-    double distance = Assists::evaluateDistance(std::make_tuple(1, 2), std::make_tuple(4, 5));
-    std::cout << "Distance between (1, 2) and (4, 5): " << distance << std::endl;
-
+    std::cout << "Category: " << category << std::endl;
+    
+    spot.setLoc(1, 2);
+    loc = spot.getLoc();
+    std::cout << "New location: (" << std::get<0>(loc) << ", " << std::get<1>(loc) << ")" << std::endl;
+    
+    spot.setCategory('B');
+    category = spot.getCategory();
+    std::cout << "New category: " << category << std::endl;
+    
+    Influence* influence = nullptr; // Cannot create an instance of abstract class
     return 0;
 }
+
