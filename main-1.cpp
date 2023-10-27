@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <tuple>
-#include "assists.h"
+#include "Assists.h"
 
 int main() {
     // Test Spot class
