@@ -1,14 +1,18 @@
-#include "GameEntity.h"
-#include "Utils.h"
 #include <iostream>
+#include "Spot.h"
+#include "Influence.h"
+#include "Assists.h"
 
 int main() {
-    std::tuple<int, int> pos1 = Utils::generateRandomPos(10, 10);
-    std::tuple<int, int> pos2 = Utils::generateRandomPos(10, 10);
-    double distance = Utils::calculateDistance(pos1, pos2);
+    Spot spot(1, 1, 'A');
+    std::tuple<int, int> loc = spot.getLoc();
+    char category = spot.getCategory();
+    std::cout << "Location: (" << std::get<0>(loc) << ", " << std::get<1>(loc) << "), Category: " << category << std::endl;
 
-    std::cout << "Position 1: (" << std::get<0>(pos1) << ", " << std::get<1>(pos1) << ")\n";
-    std::cout << "Position 2: (" << std::get<0>(pos2) << ", " << std::get<1>(pos2) << ")\n";
+    std::tuple<int, int> randomLoc = Assists::createRandomLoc(5, 5);
+    std::cout << "Random Location: (" << std::get<0>(randomLoc) << ", " << std::get<1>(randomLoc) << ")" << std::endl;
+
+    double distance = Assists::evaluateDistance(std::make_tuple(1, 1), std::make_tuple(3, 4));
     std::cout << "Distance: " << distance << std::endl;
 
     return 0;
