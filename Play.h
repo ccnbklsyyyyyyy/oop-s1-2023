@@ -7,9 +7,9 @@
 class Play {
 public:
     Play();
+    std::vector<Spot*>& getMatrix();
     void initPlay(int numPersonas, int numSnares, int matrixWidth, int matrixHeight);
     void playCycle(int maxCycles, double snareTriggerDistance);
-    const std::vector<Spot*>& getMatrix() const;
 
 private:
     std::vector<Spot*> matrix;

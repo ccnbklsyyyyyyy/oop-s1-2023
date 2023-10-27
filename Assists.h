@@ -1,11 +1,12 @@
-#ifndef ASSISTS_H
-#define ASSISTS_H
+#ifndef ASSIST_H
+#define ASSIST_H
 
 #include <tuple>
 
-namespace assists {
-    std::tuple<int, int> createRandomLoc(int matrixWidth, int matrixHeight);
-    double evaluateDistance(std::tuple<int, int> loc1, std::tuple<int, int> loc2);
-}
+class Assists {
+public:
+    static std::tuple<int, int> createRandomLoc(int matrixWidth, int matrixHeight);
+    static double evaluateDistance(std::tuple<int, int> loc1, std::tuple<int, int> loc2);
+};
 
 #endif

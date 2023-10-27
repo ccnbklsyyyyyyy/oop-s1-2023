@@ -1,31 +1,21 @@
+#include <iostream>
 #include "Spot.h"
 #include "Influence.h"
-#include <iostream>
-#include <vector>
-#include <tuple>
 #include "Assists.h"
 
 int main() {
-    // Test Spot class
-    Spot s1(1, 2, 'P');
-    std::cout << "Spot location: " << std::get<0>(s1.getLoc()) << ", " << std::get<1>(s1.getLoc()) << std::endl;
-    s1.setCategory('S');
-    std::cout << "Spot category after setCategory: " << s1.getCategory() << std::endl;
+    Spot spot(1, 2, 'A');
+    std::tuple<int, int> loc = spot.getLoc();
+    char category = spot.getCategory();
 
-    // Test Influence class
-    class DummyInfluence : public Influence {
-    public:
-        void implement(Spot& spot) {
-            std::cout << "Implementing influence on spot at (" << std::get<0>(spot.getLoc()) << ", " << std::get<1>(spot.getLoc()) << ")" << std::endl;
-        }
-    };
-    DummyInfluence dummyInfluence;
+    std::cout << "Spot Location: (" << std::get<0>(loc) << ", " << std::get<1>(loc) << ")" << std::endl;
+    std::cout << "Spot Category: " << category << std::endl;
 
-    // Test Assists functions
-    std::tuple<int, int> randomLoc = assists::createRandomLoc(10, 10);
-    std::cout << "Random location: (" << std::get<0>(randomLoc) << ", " << std::get<1>(randomLoc) << ")" << std::endl;
-    double distance = assists::evaluateDistance(randomLoc, randomLoc);
-    std::cout << "Distance to self: " << distance << std::endl;
+    std::tuple<int, int> randomLoc = Assists::createRandomLoc(5, 5);
+    std::cout << "Random Location: (" << std::get<0>(randomLoc) << ", " << std::get<1>(randomLoc) << ")" << std::endl;
+
+    double distance = Assists::evaluateDistance(std::make_tuple(1, 2), std::make_tuple(4, 5));
+    std::cout << "Distance between (1, 2) and (4, 5): " << distance << std::endl;
 
     return 0;
 }
