@@ -1,16 +1,15 @@
-#include "GameEntity.h"
-#include "Explosion.h"
-#include "Ship.h"
-#include "Mine.h"
+#include <iostream>
+#include "Snare.h"
+#include "Persona.h"
 
 int main() {
-    Ship ship(1, 2);
-    Mine mine(5, 6);
-    Explosion explosion(7, 8);
+    Snare snare(1, 1);
+    std::cout << "Snare Category: " << snare.getCategory() << ", Operative: " << snare.isOperative() << std::endl;
 
-    ship.move(2, 3);
-    mine.explode();
-    explosion.apply(ship);
+    Persona persona(2, 2);
+    std::cout << "Persona Category: " << persona.getCategory() << std::endl;
+    persona.shift(1, 1);
+    std::cout << "Persona New Location: (" << persona.getLoc().first << ", " << persona.getLoc().second << ")" << std::endl;
 
     return 0;
 }
