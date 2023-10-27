@@ -1,7 +1,7 @@
 #ifndef INFLUENCE_H
 #define INFLUENCE_H
 
-#include "Spot.h"
+#include <tuple>
 
 class Influence {
 public:

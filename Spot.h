@@ -6,8 +6,8 @@
 class Spot {
 public:
     Spot(int x, int y, char category);
-    std::tuple<int, int> getLoc();
-    char getCategory();
+    std::tuple<int, int> getLoc() const;
+    char getCategory() const;
     void setLoc(int x, int y);
     void setCategory(char category);
 

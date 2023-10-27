@@ -1,16 +1,29 @@
-#include <iostream>
+#include "Play.h"
 #include "Snare.h"
 #include "Persona.h"
+#include <iostream>
+#include <vector>
+#include <tuple>
+#include "assists.h"
 
 int main() {
-    Snare snare(1, 1);
-    std::cout << "Snare Category: " << snare.getCategory() << ", Operative: " << snare.isOperative() << std::endl;
+    // Create a Play object and initialize it
+    Play play;
+    play.initPlay(2, 1, 10, 10);
 
-    Persona persona(2, 2);
-    std::cout << "Persona Category: " << persona.getCategory() << std::endl;
-    persona.shift(1, 1);
-    std::tuple<int, int> loc = persona.getLoc();
-    std::cout << "Persona New Location: (" << std::get<0>(loc) << ", " << std::get<1>(loc) << ")" << std::endl;
+    // Add Persona and Snare objects to the matrix
+    for (auto& spot : play.getMatrix()) {
+        if (std::get<0>(spot->getLoc()) == 0 && std::get<1>(spot->getLoc()) == 0) {
+            Snare* snare = new Snare(0, 0);
+            spot = snare;
+        } else if (std::get<0>(spot->getLoc()) == 0 && std::get<1>(spot->getLoc()) == 1) {
+            Persona* persona = new Persona(0, 1);
+            spot = persona;
+        }
+    }
+
+    // Run the game for 10 cycles
+    play.playCycle(10, 2);
 
     return 0;
 }
