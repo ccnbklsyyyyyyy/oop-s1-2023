@@ -9,7 +9,8 @@ int main() {
     Persona persona(2, 2);
     std::cout << "Persona Category: " << persona.getCategory() << std::endl;
     persona.shift(1, 1);
-    std::cout << "Persona New Location: (" << persona.getLoc().first << ", " << persona.getLoc().second << ")" << std::endl;
+    std::tuple<int, int> loc = persona.getLoc();
+    std::cout << "Persona New Location: (" << std::get<0>(loc) << ", " << std::get<1>(loc) << ")" << std::endl;
 
     return 0;
 }

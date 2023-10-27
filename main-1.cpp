@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Spot.h"
-#include "Influence.h"
 #include "Assists.h"
 
 int main() {
